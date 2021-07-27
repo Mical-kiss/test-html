@@ -410,6 +410,7 @@
             //设置animate动画初始值
             $('.pop_main0 .pop_con').css({'opacity':0}, 'fast')
             $('.pop_main0 .pop_con').animate({'opacity':1}, 'fast')
+            document.documentElement.style.overflow = 'hidden'
         })
 
         $('#J_Concat').click(function(){
@@ -421,6 +422,7 @@
                 //设置animate动画初始值
                 $('.pop_main2 .pop_con').css({'opacity':0}, 'fast')
                 $('.pop_main2 .pop_con').animate({'opacity':1}, 'fast')
+                document.documentElement.style.overflow = 'hidden'
             })
         })
 
@@ -441,6 +443,7 @@
                     correctLevel : QRCode.CorrectLevel.H
                 })
             }
+            document.documentElement.style.overflow = 'hidden'
         })
 
         //取消按钮和关闭按钮添加事件
@@ -449,18 +452,21 @@
                 //隐藏弹窗的主界面
                 $('.pop_main').hide()
             })
+            document.documentElement.style.overflow = 'scroll'
         })
         $('#close1').click(function(){
             $('.pop_con').animate({'opacity':0}, 'fast', function(){
                 //隐藏弹窗的主界面
                 $('.pop_main1').hide()
             })
+            document.documentElement.style.overflow = 'scroll'
         })
         $('#close2').click(function(){
             $('.pop_con').animate({'opacity':0}, 'fast', function(){
                 //隐藏弹窗的主界面
                 $('.pop_main2').hide()
             })
+            document.documentElement.style.overflow = 'scroll'
         })
 
         $('#J_GoForm').click(function(){
