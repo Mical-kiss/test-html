@@ -1,0 +1,377 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta content="text/html;charset=UTF-8" http-equiv="Content-Type" />
+    <meta content="no-cache,must-revalidate" http-equiv="Cache-Control" />
+    <meta content="no-cache" http-equiv="pragma" />
+    <meta content="0" http-equiv="expires" />
+    <meta content="telephone=no, address=no" name="format-detection" />
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <title>2021标点云线下沙龙郑州站</title>
+    <script src="https://ui.aiyichuan.com/urmyx/js/jquery2.1.0.js" type="text/javascript"></script>
+    <script src="https://ui.aiyichuan.com/urmyx/js/height.js?t=1.0.3"></script>
+</head>
+<style>
+    html {
+        font-size: calc(12 * (100vw) / 320) !important;
+        font-family: PingFangSC, Microsoft YaHei UI, Helvetica Neue, Helvetica, STHeiTi, sans-serif;
+    }
+
+    body {
+        margin: 0;
+        color: #fff;
+        background: #F8F8F8;
+    }
+    img {
+        -webkit-touch-callout: none;
+    }
+    p {
+        padding: 0;
+        margin: 0;
+    }
+    .font36 {
+        font-size: 1.137rem;
+    }
+    .head {
+        font-size: 0;
+    }
+
+    .head .headimg {
+        width: 100%;
+        height: auto;
+    }
+    .table {
+        padding: 0 1rem;
+        margin-top: -3.5rem;
+        position: relative;
+        /* background: #F8F8F8; */
+    }
+
+    .form {
+        color: #000;
+        padding: 2rem 1rem;
+        box-sizing: border-box;
+        background: #fff;
+        border-radius: 1.06rem 1.06rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+    .form .title {
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding: 1.25rem;
+    }
+    .form .avator {
+        margin-top: 5.2rem;
+        width: 6.3rem;
+        height: 6.3rem;
+    }
+    .form .name {
+        font-size: 1.7rem;
+        font-weight: bold;
+        margin: 20px 0;
+    }
+    .form .msg {
+        color: #606060;
+        font-size: 15px;
+        line-height: 1.8;
+    }
+    .form .record-mes {
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+        margin-top: 28px;
+    }
+    .form .mes-item .num {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+    input {
+        appearance: none;
+        color: #2A2A2A;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        background: #e8e8e8;
+        border-radius: 6px;
+        border: 1px solid #E2E2E2;
+        padding-right: 14px;
+        box-sizing: border-box;
+        height: 3.2rem;
+        width: 3.2rem;
+        padding-left: 14px;
+        border-radius: 7px;
+        display: block;
+        border: none;
+        margin-bottom: 1rem;
+        font-size: 0.924rem;
+        outline: none;
+        text-align: center;
+        font-size: 30px;
+    }
+    .password-conent {
+        display: none;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: url('./img/hx2.png'), linear-gradient(180deg, #E3EBFF 0%, #FFFFFF 100%);
+        background-repeat: no-repeat;
+        background-position: right top;
+        background-size: 30vw, 100%, 100%;
+        text-align: center;
+    }
+    .password-conent .title {
+        color: #000;
+        font-size: 20px;
+        padding: 56px 0 23px;
+        font-weight: bold;
+    }
+    .password-conent .input-list {
+        display: flex;
+        justify-content: space-around;
+        padding: 0px 20vw 0px;
+        position: relative;
+    }
+    .password-conent input.error {
+        background: #FFEBE7;
+    }
+    .password-conent .err-message {
+        width: 100vw;
+        display: none;
+        color: #FF370F;
+        bottom: 8px;
+    }
+    .password-conent img {
+        padding: 24px;
+        background-color: #e8e8e8;
+        border-radius: 50%;
+        margin-top: 23px;
+        width: 25px;
+        height: 25px;
+    }
+    .password-conent img.active {
+        background: linear-gradient(180deg, #6391FF 0%, #225EEC 100%);
+    }
+    .myhead img {
+        height: 1.48rem;
+        width: auto;
+    }
+    .pop_main {
+        /* display: none; */
+    }
+    .pop_con {
+        position: fixed;
+        top: 20vh;
+        width: 75vw;
+        background-color: #fff;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        border-radius: 10px;
+        color: #333;
+        padding: 20px 30px;
+        box-sizing: border-box;
+    }
+    .pop_main .pop_title {
+        font-size: 20px;
+        text-align: center;
+        font-weight: bold;
+        padding: 12px 0 20px 0;
+    }
+    .pop_main .close {
+        position: absolute;
+        right: 12px;
+        top: 12px;
+        width: 12px;
+    }
+    .pop_main .des {
+        font-size: 15px;
+        color: #000;
+        margin-bottom: 26px;
+        text-align: center;
+    }
+    .pop_main .mask {
+        position: fixed;
+        background: rgba(0, 0, 0, 0.7);
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0
+    }
+    .btn {
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        width: 48vw;
+        background: #225EEC;
+        color: #fff;
+        border-radius: 6px;
+        margin: 0 auto;
+    }
+    .gry-btn {
+        background: #E9E9E9;
+        color: #2A2A2A;
+        margin-right: 1.2rem;
+    }
+    .mini-btn {
+        display: inline-block;
+        width: 6.6rem;
+    }
+</style>
+
+<body>
+<div class="password-conent">
+    <div class="title">请输入签到密码</div>
+    <div class="input-list">
+        <input type="number" class="item item1">
+        <input type="number" class="item">
+        <input type="number" class="item">
+        <input type="number" class="item">
+    </div>
+    <div class="err-message">密码错误，请重新输入</div>
+    <img class="J_ConfirmPass" src="./img/hx1.png" alt="">
+</div>
+<div class="conent">
+    <section class="head">
+        <img src="./img/hx3.png" class="headimg" />
+    </section>
+</div>
+<section class="table">
+    <!-- <div class="form">
+        <div class="title">
+            个人信息
+        </div>
+        <img src="./img/hx4.png" alt="" class="avator">
+        <div class="name">吴大力买少儿</div>
+        <div class="msg">手机：12326565556</div>
+        <div class="msg">报名信息：2021-41-22 13:55:43</div>
+        <div class="btn" style="margin-top: 100px;">确认已到场</div>
+    </div> -->
+    <div class="form">
+        <div class="title">
+            会议签到
+        </div>
+        <div class="record-mes">
+            <div class="mes-item">
+                <p class="num">4555</p>
+                <p class="msg">报名成功</p>
+            </div>
+            <div class="mes-item">
+                <p class="num">4555</p>
+                <p class="msg">已签到</p>
+            </div>
+            <div class="mes-item">
+                <p class="num">4555</p>
+                <p class="msg">未签到</p>
+            </div>
+        </div>
+        <div class="btn" style="margin-top: 100px;">扫码签到</div>
+    </div>
+</section>
+
+
+<div class="pop_main pop_main0" style="display: none;">
+    <div class="pop_con">
+        <div class="pop_title">
+            <span class="text-bg">友情提示</span>
+            <img class="close J_Close" src="https://ui.aiyichuan.com/miniprogram/assets/tiktok202108/close.FoY_AJtQAlq6rjazcoSbwel8p-os.png" alt="">
+        </div>
+        <div class="pop_detail">
+            <p class="des">参会者【武大力卖烧鹅】已签到</p>
+            <div class="btn font36" id="J_GoForm">
+                我知道了
+            </div>
+        </div>
+    </div>
+    <div class="mask"></div>
+</div>
+<div class="pop_main pop_main1">
+    <div class="pop_con">
+        <div class="pop_title">
+            <span class="text-bg">再次确认</span>
+            <img class="close J_Close" src="https://ui.aiyichuan.com/miniprogram/assets/tiktok202108/close.FoY_AJtQAlq6rjazcoSbwel8p-os.png" alt="">
+        </div>
+        <div class="pop_detail">
+            <p class="des">确认参会者本人到场</p>
+            <div style="text-align: center;">
+                <div class="btn gry-btn mini-btn font36" id="J_GoForm">
+                    取消
+                </div>
+                <div class="btn mini-btn font36" id="J_GoForm">
+                    确认
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mask"></div>
+</div>
+
+</body>
+<script>
+    window.onscroll = function () {
+        var a = document.documentElement.scrollTop || document.body.scrollTop;//滚动条y轴上的距离
+        var b = document.documentElement.clientHeight || document.body.clientHeight;//可视区域的高度
+        var c = document.documentElement.scrollHeight || document.body.scrollHeight;//可视化的高度与溢出的距离（总高度）
+        if (a > 40) {
+            $('.myhead').css({ opacity: .5 })
+        }
+    }
+
+    $(function(){
+        $('.input-list .item1').focus()
+        $('.input-list .item').on('focus', function(ev) {
+            $(ev.target).val('')
+        })
+        $('.input-list .item').on('input', function(ev) {
+            var $current = $(ev.target)
+            var $next = $current.next()
+            if ($next.length && !$next.val()) {
+                $next.focus()
+            }
+            var canJudge = true
+            $('.input-list .item').each(function() {
+                if (!$(this).val()) canJudge = false
+            })
+            if (canJudge) {
+                $('.password-conent img').addClass('active')
+            } else {
+                $('.password-conent img').removeClass('active')
+            }
+        })
+        $('.J_ConfirmPass').click(function() {
+            if ($(this).hasClass('active')) {
+                $('.input-list .item').addClass('error')
+                $('.password-conent .err-message').show()
+                /* $.post("/home/index/baoming.html", { password: 1234 }, function(data) {
+                    if (data.code == 200) {
+                        $('.password-conent').hide()
+                    } else {
+                    }
+                }) */
+            }
+        })
+        //取消按钮和关闭按钮添加事件
+        $('.J_Close').click(function(){
+            $('.pop_con').animate({'opacity':0}, 'fast', function(){
+                //隐藏弹窗的主界面
+                $('.pop_main').hide()
+            })
+        })
+    })
+</script>
+<script type="text/javascript" src="https://ui.aiyichuan.com/miniprogram/assets/tiktok202108/qrcode.min.FsSrEy_009ZKg4VMh16nm4tUH68S.js"></script>
+
+</html>

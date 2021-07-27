@@ -1,0 +1,787 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta content="text/html;charset=UTF-8" http-equiv="Content-Type" />
+    <meta content="no-cache,must-revalidate" http-equiv="Cache-Control" />
+    <meta content="no-cache" http-equiv="pragma" />
+    <meta content="0" http-equiv="expires" />
+    <meta content="telephone=no, address=no" name="format-detection" />
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <title>2019标点学院线下沙龙</title>
+    <script src="https://ui.aiyichuan.com/urmyx/js/jquery2.1.0.js" type="text/javascript"></script>
+    <script src="https://ui.aiyichuan.com/urmyx/js/height.js?t=1.0.3"></script>
+</head>
+<style>
+    html {
+        font-size: calc(12 * (100vw) / 320) !important;
+        background: #011CBB;
+        font-family: PingFangSC, Microsoft YaHei UI, Helvetica Neue, Helvetica, STHeiTi, sans-serif;
+    }
+
+    body {
+        margin: 0;
+        color: #fff;
+    }
+
+    p {
+        padding: 0;
+        margin: 0;
+    }
+
+    .fw {
+        font-weight: 500;
+    }
+
+    .head .headimg {
+        width: 100%;
+        height: auto;
+    }
+
+    .font30 {
+        font-size: 1.06rem;
+    }
+
+    .font36 {
+        font-size: 1.137rem;
+    }
+
+    .font48 {
+        font-size: 1.49rem;
+        font-weight: 500;
+    }
+
+    .font26 {
+        font-size: 0.924rem;
+    }
+
+    .font22 {
+        font-size: 0.782rem;
+    }
+
+    .table {
+        padding: 0 1rem;
+        margin-top: -15rem;
+        position: relative;
+    }
+
+    .formbody .form {
+        color: #fff;
+        padding: 2rem 1rem;
+        box-sizing: border-box;
+        background: #fff;
+        border-radius: 1.06rem 1.06rem 0 0;
+        padding-bottom: 5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tip {
+        font-weight: 500;
+        color: rgb(180, 0, 0);
+        line-height: 1.7rem;
+        text-align: left;
+        margin-bottom: 1rem;
+    }
+
+    input, textarea {
+        outline: none;
+    }
+
+    .formbody .box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 98%;
+    }
+
+    .formbody .box .input {
+        appearance: none;
+        color: #2A2A2A;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        background: #F5F5F5;
+        border-radius: 6px;
+        border: 1px solid #E2E2E2;
+        padding-right: 14px;
+        box-sizing: border-box;
+        height: 3.2rem;
+        padding-left: 1.4rem;
+        border-radius: 7px;
+        display: block;
+        width: 100%;
+        border: none;
+        margin-bottom: 1rem;
+        font-size: 0.924rem;
+    }
+
+    .formbody .box .select {
+        appearance: none;
+        color: #2A2A2A;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        background-color: #F5F5F5;
+        border-radius: 6px;
+        border: 1px solid #E2E2E2;
+        padding-right: 14px;
+        box-sizing: border-box;
+        height: 3.2rem;
+        padding-left: 1.4rem;
+        border-radius: 7px;
+        display: block;
+        width: 100%;
+        border: none;
+        margin-bottom: 1rem;
+        font-size: 0.924rem;
+    }
+
+    select::-ms-expand {
+        display: none;
+    }
+
+    .formbody .box .textarea {
+        appearance: none;
+        color: #2A2A2A;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        background: #F5F5F5;
+        border-radius: 6px;
+        border: 1px solid #E2E2E2;
+        padding: 14px 14px 14px 0;
+        box-sizing: border-box;
+        height: 6rem;
+        padding-left: 1.4rem;
+        border-radius: 7px;
+        display: block;
+        width: 100%;
+        border: none;
+        margin-bottom: 1rem;
+        font-size: 0.924rem;
+    }
+
+    .input::-webkit-input-placeholder {
+        color: #969696;
+    }
+
+    .input::-moz-placeholder {
+        color: #969696;
+    }
+
+    .input::-ms-input-placeholder {
+        color: #969696;
+    }
+
+    .span_dsc {
+        width: 100%;
+        font-size: 0.724rem;
+        color: #999;
+        margin-top: -0.3rem;
+        margin-bottom: 1rem;
+        line-height: 1.2rem;
+        padding: 0 14px;
+        box-sizing: border-box;
+    }
+
+    .span_su_dsc {
+        width: 100%;
+        font-size: 1rem;
+        color: #666;
+        text-align: center;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        line-height: 1.2rem;
+        padding: 0 14px;
+        box-sizing: border-box;
+    }
+
+    .input:focus {
+        outline: 0;
+    }
+
+    .formbody .btn {
+        height: 3.2rem;
+        width: 90%;
+        background: #225EEC;
+        border-radius: 7px;
+        text-align: center;
+        line-height: 3.2rem;
+        color: #fff;
+        margin-top: 2rem;
+    }
+
+    .myhead {
+        position: fixed;
+        padding: 1rem 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: black;
+        padding-left: 1rem;
+    }
+
+    .myhead img {
+        height: 1.48rem;
+        width: auto;
+    }
+
+    .day-form {
+        color: #000;
+    }
+
+    .day-line {
+        padding: 5px 0;
+    }
+
+    .div_title {
+        display: flex;
+        height: 1.7rem;
+        width: 35%;
+        position: relative;
+        margin-bottom: 1.5rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .text_title {
+        font-weight: 500;
+        color: rgba(42, 42, 42, 1);
+        line-height: 1.7rem;
+        text-align: center;
+    }
+
+    .text_title::after {
+        content: '';
+        position: absolute;
+        border-radius: 4px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 6px;
+        background: linear-gradient(270deg, #E3FFFF 0%, #44A6FA 100%);
+    }
+
+    .div_top_bg_line {
+        width: 90%;
+        height: 0.6rem;
+        bottom: 0;
+        left: 5%;
+        position: absolute;
+        background: linear-gradient(270deg, #E3FFFF 60%, #44A6FA 100%);
+        border-radius: 7px;
+    }
+
+    .text_toast {
+        max-width: 60%;
+        font-size: 14px;
+        color: white;
+        background-color: #000;
+        opacity: 0.8;
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
+
+    .div_toast_bg {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        z-index: 999999;
+        left: 0;
+        top: 300px;
+    }
+
+    .pop_main {
+        display: none;
+        z-index: 999999;
+    }
+
+    .pop_con {
+        position: fixed;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        top: 20vh;
+        width: 75vw;
+        background-color: #fff;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        border-radius: 10px;
+        color: #333;
+        padding: 20px 30px;
+        box-sizing: border-box;
+    }
+
+    .pop_main .close {
+        position: absolute;
+        right: 12px;
+        top: 12px;
+        width: 12px;
+    }
+
+    .pop_main .mask {
+        position: fixed;
+        background: rgba(0, 0, 0, 0.6);
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0
+    }
+
+    .pop_detail .sub-title {
+        color: #2a2a2a;
+        font-size: 15px;
+        margin-bottom: 15px;
+    }
+
+    .pop_detail .progress {
+        color: #4F4F4F;
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+
+    .pop_detail em {
+        font-size: 8px;
+        margin-right: 12px;
+        display: inline-block;
+        font-style: normal;
+        border-radius: 50%;
+        background: #C0C0C0;
+        color: #fff;
+        width: 12px;
+        height: 12px;
+        text-align: center;
+        line-height: 12px;
+    }
+
+    .pop_detail .tip {
+        margin-bottom: 22px;
+        display: flex;
+    }
+
+    .pop_detail .icon {
+        color: #FF2D00;
+        margin-right: 4px;
+    }
+
+    .pop_detail .des {
+        color: #131415;
+        font-weight: bold;
+    }
+
+    .img_su {
+        width: 5rem;
+        margin-bottom: 1rem;
+    }
+
+    .img_er_code {
+        width: 12rem;
+    }
+    
+    .pop-action .pop-con {
+        position: fixed;
+        padding: 60px 20px 20px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        max-height: 70vh;
+        overflow-y: scroll;
+        transition: transform .3s;
+        transform: translateY(100%);
+        z-index: 1;
+        color: #2A2A2A;
+        background: #fff;
+    }
+    .pop-action .pop-con .title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        line-height: 60px;
+        font-size: 20px;
+        text-align: center;
+    }
+    .pop-action .pop-con .list {
+        padding: 12px;
+        border-bottom: 1px solid #efefef;
+    }
+    .pop-action .pop-con .list:last-child {
+        border-bottom: 0;
+    }
+    .pop-action .mask {
+        position: fixed;
+        display: none;
+        background: rgba(0, 0, 0, 0.6);
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0
+    }
+    .pop-action .close {
+        position: absolute;
+        z-index: 1;
+        right: 12px;
+        top: 12px;
+        width: 12px;
+    }
+</style>
+
+<body class="formbody">
+    <!-- <div class="myhead">
+        <img src="https://ui.aiyichuan.com/sharon/myhead.png" />
+    </div> -->
+    <section class="head">
+        <img src="https://ui.aiyichuan.com/miniprogram/assets/tiktok202108/img007.FnwJZ4M0e1VqA8dk1RCJd8t1m0Tp.png" class="headimg" />
+    </section>
+    <section class="table">
+        <div class="form">
+            <div class="div_title">
+                <p class="text_title font36">填写报名信息</p>
+            </div>
+            <div class="box">
+                <input class="input" name="name" type="text" placeholder="请输入您的姓名" />
+                <input class="input" name="phone" type="number" placeholder="请输入您的联系电话" />
+                <span class="span_dsc">您审核通过本次活动报名，工作人员将会通过短息的形式通知您</span>
+                <input class="input J_Company_type_id" name="company_type_id" placeholder="请选择您的单位类型" />
+                <input class="input J_Industry_id" name="industry_id" placeholder="请选择您的行业" />
+                <input class="input J_Bytedance_desc_id" name="bytedance_desc_id" placeholder="您对抖音小程序的了解" />
+                <input class="input J_Bytedance_xcx_id" name="bytedance_xcx_id" placeholder="您是否在抖音视频创作中挂载过小程序" />
+                <input class="input J_Bytedance_xcx_id1" name="bytedance_xcx_id1" placeholder="是否与标点云有合作关系" />
+                <textarea class="textarea" name="content" type="" placeholder="关于抖音小程序【本地生活】行业，您还有什么想深入了解"></textarea>
+            </div>
+            <div class="btn font36" id="submit">确认报名</div>
+        </div>
+    </section>
+    <div class="pop_main">
+        <div class="pop_con">
+            <img class="close J_Close" src="https://ui.aiyichuan.com/miniprogram/assets/tiktok202108/close.FoY_AJtQAlq6rjazcoSbwel8p-os.png" alt="">
+            <img class="img_su" src="https://ui.aiyichuan.com/miniprogram/assets/tiktok202108/su.FkO_GfXAdUQOcnYxmKn8-TRB5VKh.png">
+            <span class="font36">信息已提交</span>
+            <span class="span_su_dsc">报名信息已提交，长按识别二维码可添加我们 </span>
+            <img class="img_er_code" src="https://ui.aiyichuan.com/miniprogram/assets/tiktok202108/蔡老师.FgzpQEjaGRNoISF2gxPJTPycu50n.png">
+            <div class="btn" id="J_GoForm">
+                填写报名表单
+            </div>
+        </div>
+        <div class="mask"></div>
+    </div>
+
+    <div class="pop-action company_type_id">
+        <div class="pop-con" data-input="J_Company_type_id">
+            <img class="close J_Close" src="https://ui.aiyichuan.com/miniprogram/assets/tiktok202108/close.FoY_AJtQAlq6rjazcoSbwel8p-os.png" alt="">
+            <div class="title">单位类型</div>
+            <div class="list" data-id="1">行业服务商</div>
+            <div class="list" data-id="2">MCN机构</div>
+            <div class="list" data-id="3">个人创作者</div>
+            <div class="list" data-id="4">其他(请备注)</div>
+        </div>
+        <div class="mask"></div>
+    </div>
+    <div class="pop-action industry_id">
+        <div class="pop-con" data-input="J_Industry_id">
+            <img class="close J_Close" src="https://ui.aiyichuan.com/miniprogram/assets/tiktok202108/close.FoY_AJtQAlq6rjazcoSbwel8p-os.png" alt="">
+            <div class="title">行业</div>
+            <div class="list" data-id="1">餐饮服务</div>
+            <div class="list" data-id="2">休闲娱乐</div>
+            <div class="list" data-id="3">周边游</div>
+            <div class="list" data-id="4">酒旅</div>
+            <div class="list" data-id="5">美业</div>
+            <div class="list" data-id="6">摄影</div>
+            <div class="list" data-id="7">宠物</div>
+            <div class="list" data-id="8">其他</div>
+        </div>
+        <div class="mask"></div>
+    </div>
+    <div class="pop-action bytedance_desc_id">
+        <div class="pop-con" data-input="J_Bytedance_desc_id">
+            <img class="close J_Close" src="https://ui.aiyichuan.com/miniprogram/assets/tiktok202108/close.FoY_AJtQAlq6rjazcoSbwel8p-os.png" alt="">
+            <div class="title">对抖音小程序的了解</div>
+            <div class="list" data-id="1">是，我了解小程序的入口和功能</div>
+            <div class="list" data-id="2">听说过抖音小程序，但对于功能和使用场景等不是很了解</div>
+            <div class="list" data-id="3">完全没听说过抖音小程序</div>
+        </div>
+        <div class="mask"></div>
+    </div>
+    <div class="pop-action bytedance_xcx_id">
+        <div class="pop-con" data-input="J_Bytedance_xcx_id">
+            <img class="close J_Close" src="https://ui.aiyichuan.com/miniprogram/assets/tiktok202108/close.FoY_AJtQAlq6rjazcoSbwel8p-os.png" alt="">
+            <div class="title">是否挂载过</div>
+            <div class="list" data-id="1">是，挂载过</div>
+            <div class="list" data-id="2">没挂载过抖音小程序，但使用过小程序的功能</div>
+            <div class="list" data-id="3">没挂载过也没使用过</div>
+        </div>
+        <div class="mask"></div>
+    </div>
+    <div class="pop-action bytedance_xcx_id1">
+        <div class="pop-con" data-input="J_Bytedance_xcx_id1">
+            <img class="close J_Close" src="https://ui.aiyichuan.com/miniprogram/assets/tiktok202108/close.FoY_AJtQAlq6rjazcoSbwel8p-os.png" alt="">
+            <div class="title">是否有合作关系</div>
+            <div class="list" data-id="1">有合作关系</div>
+            <div class="list" data-id="2">无合作关系</div>
+        </div>
+        <div class="mask"></div>
+    </div>
+</body>
+<script>
+    window.onscroll = function () {
+        var a = document.documentElement.scrollTop || document.body.scrollTop;//滚动条y轴上的距离
+        var b = document.documentElement.clientHeight || document.body.clientHeight;//可视区域的高度
+        var c = document.documentElement.scrollHeight || document.body.scrollHeight;//可视化的高度与溢出的距离（总高度）
+        //if(a + b == c){
+        //    alert('已滚动到底部!')
+        //}
+        if (a > 40) {
+            $('.myhead').css({ opacity: .9 })
+        }
+    }
+    $('#submit').on('click', function () {
+        const name = $("input[ name='name' ]").val();
+        const phone = $("input[ name='phone' ]").val();
+        const company_type_id = $(".J_Company_type_id").data('id');
+        const industry_id = $(".J_Industry_id").val();
+        const bytedance_desc_id = $(".J_Bytedance_desc_id").val();
+        const bytedance_xcx_id = $(".Bytedance_xcx_id").val();
+        const bytedance_xcx_id1 = $(".Bytedance_xcx_id1").val();
+        const content = $("textarea[name='content']").val();
+        const param = {}
+        if (name) {
+            param.name = name
+        } else {
+            showToast("请输入您的姓名")
+            return
+        }
+        if (phone) {
+        } else {
+            showToast("请输入您的手机号")
+            return
+        }
+        if (isPhoneNumber(phone)) {
+            param.phone = phone
+        } else {
+            showToast("请输入正确的手机号")
+            return
+        }
+        if (company_type_id) {
+            param.company_type_id = company_type_id
+        } else {
+            showToast("请选择您的单位类型")
+            return
+        }
+        if (industry_id) {
+            param.industry_id = industry_id
+        } else {
+            showToast("请选择您的行业")
+            return
+        }
+        if (bytedance_desc_id) {
+            param.bytedance_desc_id = bytedance_desc_id
+        } else {
+            showToast("请选择您对抖音小程序的了解")
+            return
+        }
+        if (bytedance_xcx_id) {
+            param.bytedance_xcx_id = bytedance_xcx_id
+        } else {
+            showToast("请选择您是否在抖音视频创作中挂载过小程序")
+            return
+        }
+        if (bytedance_xcx_id1) {
+            param.bytedance_xcx_id1 = bytedance_xcx_id1
+        } else {
+            showToast("请选择是否有合作关系")
+            return
+        }
+        param.content = content
+        console.log("param==" + JSON.stringify(param))
+        $.post("/home/index/baoming.html", { name: name, phone: phone, num: num, statename: statename, number: number }, function (data) {
+            if (data.code == 200) {
+                showToast()
+            } else {
+                alert(data.msg)
+            }
+        }, 'json');
+    });
+    function showToast(msg) {
+        var bgView = document.createElement('div');
+        var content = document.createElement('div');
+        content.innerHTML = msg;
+        content.className = "text_toast"
+        bgView.className = "div_toast_bg"
+        bgView.appendChild(content);
+        document.body.appendChild(bgView);
+        setTimeout(function () {
+            var d = 0.5;
+            content.style.webkitTransition = '-webkit-transform ' + d + 's ease-in, opacity ' + d + 's ease-in';
+            content.style.opacity = '0';
+            setTimeout(function () { document.body.removeChild(bgView) }, d * 1000);
+        }, 500)
+    }
+    $('.J_Close').click(function () {
+        $('.pop-con').css('transform', 'translateY(100%)')
+        $('.mask').hide()
+        $('.pop_con').animate({ 'opacity': 0 }, 'fast', function () {
+            //隐藏弹窗的主界面
+            $('.pop_main').hide()
+        })
+        document.documentElement.style.overflow = 'scroll'
+    })
+    $('#J_GoForm').click(function () {
+       location.href='./index.html'
+    })
+
+    $('.J_Company_type_id').click(function(event) {
+        $('.company_type_id .pop-con').css('transform', 'translateY(0%)')
+        $('.company_type_id .mask').show()
+        document.documentElement.style.overflow = 'hidden'
+    })
+    $('.J_Industry_id').click(function(event) {
+        $('.industry_id .pop-con').css('transform', 'translateY(0%)')
+        $('.industry_id .mask').show()
+        event.preventDefault()
+    })
+    $('.J_Bytedance_desc_id').click(function(event) {
+        $('.bytedance_desc_id .pop-con').css('transform', 'translateY(0%)')
+        $('.bytedance_desc_id .mask').show()
+        event.preventDefault()
+    })
+    $('.J_Bytedance_xcx_id').click(function(event) {
+        $('.bytedance_xcx_id .pop-con').css('transform', 'translateY(0%)')
+        $('.bytedance_xcx_id .mask').show()
+        event.preventDefault()
+    })
+    $('.J_Bytedance_xcx_id1').click(function(event) {
+        $('.bytedance_xcx_id1 .pop-con').css('transform', 'translateY(0%)')
+        $('.bytedance_xcx_id1 .mask').show()
+        event.preventDefault()
+    })
+    $('.pop-action .pop-con .list').click(function(ev) {
+        $('.pop-con').css('transform', 'translateY(100%)')
+        $('.mask').hide()
+        var $target = $(ev.target)
+        var inputClassName = '.' + $target.parent().data('input')
+        $(inputClassName).val($target.text())
+        $(inputClassName).attr('data-id', $target.data('id'))
+    })
+    function showErcode(msg) {
+        $('.pop_main').show()
+        //设置animate动画初始值
+        $('.pop_con').css({ 'opacity': 0 }, 'fast')
+        $('.pop_con').animate({ 'opacity': 1 }, 'fast')
+
+        //取消按钮和关闭按钮添加事件
+
+    }
+
+    function isPhoneNumber(tel) {
+        var reg = /^0?1[3|4|5|6|7|8][0-9]\d{8}$/;
+        return reg.test(tel);
+    }
+
+</script>
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.3.0.js"></script>
+<script>
+    function encodeUTF8(s) {
+        var i, r = [], c, x;
+        for (i = 0; i < s.length; i++)
+            if ((c = s.charCodeAt(i)) < 0x80) r.push(c);
+            else if (c < 0x800) r.push(0xC0 + (c >> 6 & 0x1F), 0x80 + (c & 0x3F));
+            else {
+                if ((x = c ^ 0xD800) >> 10 == 0) //对四字节UTF-16转换为Unicode
+                    c = (x << 10) + (s.charCodeAt(++i) ^ 0xDC00) + 0x10000,
+                        r.push(0xF0 + (c >> 18 & 0x7), 0x80 + (c >> 12 & 0x3F));
+                else r.push(0xE0 + (c >> 12 & 0xF));
+                r.push(0x80 + (c >> 6 & 0x3F), 0x80 + (c & 0x3F));
+            };
+        return r;
+    }
+
+    // 字符串加密成 hex 字符串
+    function sha1(s) {
+        var data = new Uint8Array(encodeUTF8(s))
+        var i, j, t;
+        var l = ((data.length + 8) >>> 6 << 4) + 16, s = new Uint8Array(l << 2);
+        s.set(new Uint8Array(data.buffer)), s = new Uint32Array(s.buffer);
+        for (t = new DataView(s.buffer), i = 0; i < l; i++)s[i] = t.getUint32(i << 2);
+        s[data.length >> 2] |= 0x80 << (24 - (data.length & 3) * 8);
+        s[l - 1] = data.length << 3;
+        var w = [], f = [
+            function () { return m[1] & m[2] | ~m[1] & m[3]; },
+            function () { return m[1] ^ m[2] ^ m[3]; },
+            function () { return m[1] & m[2] | m[1] & m[3] | m[2] & m[3]; },
+            function () { return m[1] ^ m[2] ^ m[3]; }
+        ], rol = function (n, c) { return n << c | n >>> (32 - c); },
+            k = [1518500249, 1859775393, -1894007588, -899497514],
+            m = [1732584193, -271733879, null, null, -1009589776];
+        m[2] = ~m[0], m[3] = ~m[1];
+        for (i = 0; i < s.length; i += 16) {
+            var o = m.slice(0);
+            for (j = 0; j < 80; j++)
+                w[j] = j < 16 ? s[i + j] : rol(w[j - 3] ^ w[j - 8] ^ w[j - 14] ^ w[j - 16], 1),
+                    t = rol(m[0], 5) + f[j / 20 | 0]() + m[4] + w[j] + k[j / 20 | 0] | 0,
+                    m[1] = rol(m[1], 30), m.pop(), m.unshift(t);
+            for (j = 0; j < 5; j++)m[j] = m[j] + o[j] | 0;
+        };
+        t = new DataView(new Uint32Array(m).buffer);
+        for (var i = 0; i < 5; i++)m[i] = t.getUint32(i << 2);
+
+        var hex = Array.prototype.map.call(new Uint8Array(new Uint32Array(m).buffer), function (e) {
+            return (e < 16 ? "0" : "") + e.toString(16);
+        }).join("");
+        return hex;
+    }
+    var share_link = window.location.href;
+    var signStr = sha1('jsapi_ticket=LIKLckvwlJT9cWIhEQTwfJy86BzeiUZDt1tKXUGErshYB0tBp1zk2DKWG8JQeOH-WIuyOe6Hkjkvl2qIHUbnVQ&noncestr=gTWgYf&timestamp=1627022270&url=' + share_link);
+    wx.config({
+        debug: false,
+        appId: 'wxaf5ce2f317712a35',
+        timestamp: '1627022270',
+        nonceStr: 'gTWgYf',
+        signature: signStr,
+        jsApiList: [
+            'onMenuShareTimeline',
+            'onMenuShareAppMessage',
+            'checkJsApi',
+            'openAddress'
+            // 所有要调用的 API 都要加到这个列表中
+        ]
+    });
+    wx.ready(function () {
+        wx_fenxiang(share_link, "标点公开课", "标点公开课初级班1-3期报名", "http://q2160.img.aiyichuan.com/urm_huodong/20191009/1570584623185.jpg");
+        function wx_fenxiang(share_link, title, desc, imgurl) {
+            wx.ready(function () {
+                //朋友圈
+                wx.onMenuShareTimeline({
+                    title: title, // 分享标题
+                    link: share_link, // 分享链接
+                    imgUrl: imgurl, // 分享图标
+                    success: function () {
+                    },
+                    cancel: function () {
+                    }
+                });
+
+                //分享给朋友
+                wx.onMenuShareAppMessage({
+                    title: title, // 分享标题
+                    desc: desc, // 分享描述
+                    link: share_link, // 分享链接
+                    imgUrl: imgurl, // 分享图标
+                    type: 'link', // 分享类型,music、video或link，不填默认为link
+                    dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                    success: function () {
+                    },
+                    cancel: function () {
+                    }
+                });
+            });
+        }
+    })
+</script>
+
+</html>
