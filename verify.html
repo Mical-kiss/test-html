@@ -8,7 +8,7 @@
     <meta content="0" http-equiv="expires" />
     <meta content="telephone=no, address=no" name="format-detection" />
     <meta name="viewport"
-          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,viewport-fit=cover" />
+        content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,viewport-fit=cover" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <title>2021标点云线下沙龙郑州站</title>
@@ -121,7 +121,6 @@
         font-size: 30px;
     }
     .password-conent {
-        display: none;
         position: fixed;
         left: 0;
         right: 0;
@@ -220,6 +219,7 @@
         color: #fff;
         border-radius: 6px;
         margin: 0 auto;
+        font-size: 15px;
     }
     .gry-btn {
         background: #E9E9E9;
@@ -229,6 +229,27 @@
     .mini-btn {
         display: inline-block;
         width: 6.6rem;
+    }
+
+    .text_toast {
+        max-width: 60%;
+        font-size: 14px;
+        color: white;
+        background-color: #000;
+        opacity: 0.8;
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
+
+    .div_toast_bg {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        z-index: 999999;
+        left: 0;
+        top: 300px;
     }
 </style>
 
@@ -244,44 +265,45 @@
     <div class="err-message">密码错误，请重新输入</div>
     <img class="J_ConfirmPass" src="./img/hx1.png" alt="">
 </div>
-<div class="conent">
-    <section class="head">
-        <img src="./img/hx3.png" class="headimg" />
+<div class="sign-content" style="display: none;">
+    <div class="conent">
+        <section class="head">
+            <img src="./img/hx3.png" class="headimg" />
+        </section>
+    </div>
+    <section class="table">
+        <div class="form self-message">
+            <div class="title">
+                个人信息
+            </div>
+            <img src="./img/hx4.png" alt="" class="avator">
+            <div class="name">吴大力买少儿</div>
+            <div class="msg">手机：12326565556</div>
+            <div class="msg">报名信息：2021-41-22 13:55:43</div>
+            <div class="btn J_SignUp" style="margin-top: 100px;">确认已到场</div>
+        </div>
+        <div class="form total-message" style="display: none;">
+            <div class="title">
+                会议签到
+            </div>
+            <div class="record-mes">
+                <div class="mes-item">
+                    <p class="num">4555</p>
+                    <p class="msg">报名成功</p>
+                </div>
+                <div class="mes-item">
+                    <p class="num">4555</p>
+                    <p class="msg">已签到</p>
+                </div>
+                <div class="mes-item">
+                    <p class="num">4555</p>
+                    <p class="msg">未签到</p>
+                </div>
+            </div>
+            <div class="btn J_Scan" style="margin-top: 100px;">扫码签到</div>
+        </div>
     </section>
 </div>
-<section class="table">
-    <!-- <div class="form">
-        <div class="title">
-            个人信息
-        </div>
-        <img src="./img/hx4.png" alt="" class="avator">
-        <div class="name">吴大力买少儿</div>
-        <div class="msg">手机：12326565556</div>
-        <div class="msg">报名信息：2021-41-22 13:55:43</div>
-        <div class="btn" style="margin-top: 100px;">确认已到场</div>
-    </div> -->
-    <div class="form">
-        <div class="title">
-            会议签到
-        </div>
-        <div class="record-mes">
-            <div class="mes-item">
-                <p class="num">4555</p>
-                <p class="msg">报名成功</p>
-            </div>
-            <div class="mes-item">
-                <p class="num">4555</p>
-                <p class="msg">已签到</p>
-            </div>
-            <div class="mes-item">
-                <p class="num">4555</p>
-                <p class="msg">未签到</p>
-            </div>
-        </div>
-        <div class="btn" style="margin-top: 100px;">扫码签到</div>
-    </div>
-</section>
-
 
 <div class="pop_main pop_main0" style="display: none;">
     <div class="pop_con">
@@ -291,14 +313,14 @@
         </div>
         <div class="pop_detail">
             <p class="des">参会者【武大力卖烧鹅】已签到</p>
-            <div class="btn font36" id="J_GoForm">
+            <div class="btn font36 J_Close">
                 我知道了
             </div>
         </div>
     </div>
     <div class="mask"></div>
 </div>
-<div class="pop_main pop_main1">
+<div class="pop_main pop_main1" style="display: none;">
     <div class="pop_con">
         <div class="pop_title">
             <span class="text-bg">再次确认</span>
@@ -307,10 +329,10 @@
         <div class="pop_detail">
             <p class="des">确认参会者本人到场</p>
             <div style="text-align: center;">
-                <div class="btn gry-btn mini-btn font36" id="J_GoForm">
+                <div class="btn gry-btn mini-btn font36 J_Close">
                     取消
                 </div>
-                <div class="btn mini-btn font36" id="J_GoForm">
+                <div class="btn mini-btn font36" id="J_SureSignUp">
                     确认
                 </div>
             </div>
@@ -353,15 +375,58 @@
         })
         $('.J_ConfirmPass').click(function() {
             if ($(this).hasClass('active')) {
-                $('.input-list .item').addClass('error')
-                $('.password-conent .err-message').show()
+                /* $('.input-list .item').addClass('error')
+                $('.password-conent .err-message').show() */
+                $('.password-conent').hide()
+                $('.sign-content').show()
                 /* $.post("/home/index/baoming.html", { password: 1234 }, function(data) {
                     if (data.code == 200) {
                         $('.password-conent').hide()
+                        $('.sign-content').show()
                     } else {
+                        $('.input-list .item').addClass('error')
+                        $('.password-conent .err-message').show()
                     }
                 }) */
             }
+        })
+        $('.J_SignUp').click(function() {
+            //显示弹窗的主界面
+            $('.pop_main1').show()
+            //设置animate动画初始值
+            $('.pop_main1 .pop_con').css({'opacity':0}, 'fast')
+            $('.pop_main1 .pop_con').animate({'opacity':1}, 'fast')
+            document.documentElement.style.overflow = 'hidden'
+        })
+        $('#J_SureSignUp').click(function() {
+            $('.pop_con').animate({'opacity':0}, 'fast', function(){
+                //隐藏弹窗的主界面
+                $('.pop_main').hide()
+                showToast('签到成功')
+                $('.self-message').hide()
+                $('.total-message').show()
+            })
+            $.post("/home/index/baoming.html", { password: 1234 }, function() {
+                // 处理签到
+                if (data.code == 200) {
+                    //隐藏弹窗的主界面
+                    $('.pop_main').hide()
+                    showToast('签到成功')
+                    $('.self-message').hide()
+                    $('.total-message').show()
+                } else {
+                    showToast('签到失败')
+                }
+            })
+        })
+        $('.J_Scan').click(function() {
+            wx.scanQRCode({
+                needResult: 0, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
+                scanType: ["qrCode","barCode"], // 可以指定扫二维码还是一维码，默认二者都有
+                success: function (res) {
+                    var result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
+                }
+            })
         })
         //取消按钮和关闭按钮添加事件
         $('.J_Close').click(function(){
@@ -369,9 +434,24 @@
                 //隐藏弹窗的主界面
                 $('.pop_main').hide()
             })
+            document.documentElement.style.overflow = 'scroll'
         })
+        function showToast(msg) {
+            var bgView = document.createElement('div');
+            var content = document.createElement('div');
+            content.innerHTML = msg;
+            content.className = "text_toast"
+            bgView.className = "div_toast_bg"
+            bgView.appendChild(content);
+            document.body.appendChild(bgView);
+            setTimeout(function () {
+                var d = 0.5;
+                content.style.webkitTransition = '-webkit-transform ' + d + 's ease-in, opacity ' + d + 's ease-in';
+                content.style.opacity = '0';
+                setTimeout(function () { document.body.removeChild(bgView) }, d * 1000);
+            }, 500)
+        }
     })
 </script>
-<script type="text/javascript" src="https://ui.aiyichuan.com/miniprogram/assets/tiktok202108/qrcode.min.FsSrEy_009ZKg4VMh16nm4tUH68S.js"></script>
 
 </html>
