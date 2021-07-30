@@ -373,6 +373,13 @@
                 $('.password-conent img').removeClass('active')
             }
         })
+        $('.input-list .item').on('keydown', function(ev) {
+            console.log(event.which)
+            if (event.which === 8 && !$(this).val()) {
+                $(ev.target).prev().focus()
+                $(ev.target).prev().val('')
+            }
+        })
         $('.J_ConfirmPass').click(function() {
             if ($(this).hasClass('active')) {
                 /* $('.input-list .item').addClass('error')
